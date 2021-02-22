@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>이미지관련</h1>
+    <img src="sample/image/tower1.PNG" alt="에펠타워" />
+    <img src="https://i.pinimg.com/originals/5d/31/db/5d31db7e1126078732b41fe837a22ad5.jpg" alt="더보이즈 이현재">
+    <img src="https://i.pinimg.com/originals/5d/31/db/5d31db7e1126078732b41fe837a22ad5ㄴㄴㅇㄹㄶ.jpg" alt="더보이즈 이현재">
+
+    <hr>
+    <h2>절대값 | 상대값</h2>
+    <div>
+        <!--px픽셀 절대값이므로, 화면(viewport)가 변해도 너비/높이가 변하지 않는다. -->
+        <img src="sample/image/flower1.PNG" style="width:250px"/>
+        <img src="sample/image/flower2.PNG" style="width:250px"/>
+        <img src="sample/image/flower3.PNG" style="width:250px"/>
+        <img src="sample/image/flower4.PNG" style="width:250px"/>
+    </div>
+    
+    
+
+    <hr>
+    <div>
+        <!--%는 상대값이므로, 화면(viewport)대비 너비/높이값이 변한다. -->
+        <img src="sample/image/flower1.PNG" style="width:23%"/>
+        <img src="sample/image/flower2.PNG" style="width:23%"/>
+        <img src="sample/image/flower3.PNG" style="width:23%"/>
+        <img src="sample/image/flower4.PNG" style="width:23%"/>
+    </div>
+
+    <h2>이미지링크</h2>
+    <a href="http://w3schools.com" title="와삼스쿨로 이동하기">
+        <img src="sample/image/tiger.jpg" alt="타이거사진">
+    </a>
+
+    <h3>image map</h3>
+    <img src="sample/image/river1.PNG" style="width:500px;" alt="두물머리사진" usemap="#mymap">
+    <map name="mymap">
+        <!--shape= rect | circle | poly-->
+        <area shape="rect" coords="0,0,250,333" href="http://google.com" alt="구글이동">
+        <area shape="rect" coords="250,0,500,333" href="http://naver.com" alt="네이버이동">
+
+        <!--http://maschek.hu/imagemap/imgmap/ 이미지맵 만들어주는 사이트-->
+    </map>
+
+    <h2>이미지배치</h2>
+    <!--div>img+p>lorem*3-->
+    <div>
+        <img src="sample/image/forest1.PNG" style="float: left;">
+        <p><span>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis maxime dolores dignissimos rem reiciendis! Molestias facere aut hic autem repellendus nisi enim iure quae maiores. Est dolor veniam quia eveniet?</span><span>Aspernatur facere tempore, sapiente omnis quod qui blanditiis ducimus, cupiditate id repudiandae rerum odit? Rem voluptates, autem aliquid iste tempora quas veritatis atque sit. Accusantium enim quidem inventore cumque labore!</span><span>Laborum odit neque iusto labore voluptate possimus alias ullam, ipsum dolores quaerat corrupti at magni ducimus molestiae facilis ex, velit aliquid reiciendis? Cupiditate odit voluptas quidem placeat mollitia. Illum, sint.</span><span>Facilis quod suscipit praesentium quisquam, cupiditate, quae rerum placeat possimus tempore temporibus sequi est eveniet doloribus at voluptate accusantium pariatur aut modi? Doloremque earum, consequuntur in nisi quia odit excepturi?</span><span>Facere consequatur, quidem voluptate quasi rerum amet esse, at deserunt iste nostrum officia. Esse maxime nulla error aliquid dicta rem quidem a eligendi voluptates, sit animi vero ab natus ullam.</span><span>Porro velit corporis nisi magnam quaerat rem reiciendis numquam quis id dolorum quos atque sunt veniam non cum doloribus eum possimus voluptatem officiis obcaecati, error pariatur? Rerum placeat necessitatibus magnam!</span><span>Quia voluptate excepturi cupiditate quibusdam at, voluptatem maxime? Modi fugiat consequuntur repellendus dolor? Provident ratione amet consequuntur. Nemo ratione repudiandae inventore? Natus a illum facilis odio voluptatum consequatur voluptatibus in.</span><span>Iure, iste praesentium eligendi, molestiae sit accusantium eius soluta voluptates natus illo sint. Maxime, alias ea error quasi placeat, ducimus expedita repellendus, recusandae temporibus molestiae repudiandae eveniet fuga! Minima, eius.</span><span>Laudantium deserunt nobis beatae unde eum libero pariatur labore quisquam nihil id delectus assumenda qui commodi iusto voluptatem saepe, culpa eligendi optio consequatur, repellendus minima cupiditate fugit? At, sed temporibus.</span><span>Facilis repudiandae quasi maiores corrupti, fuga vel dolores iure molestias quo impedit nisi libero voluptatibus voluptatem dicta reprehenderit tempora dolorum obcaecati. Accusamus impedit amet, optio molestias itaque quos dolores repellendus.</span></p>
+    </div>
+    
+    <div>
+        <img src="sample/image/forest1.PNG" style="float: right;">
+        <p><span>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis maxime dolores dignissimos rem reiciendis! Molestias facere aut hic autem repellendus nisi enim iure quae maiores. Est dolor veniam quia eveniet?</span><span>Aspernatur facere tempore, sapiente omnis quod qui blanditiis ducimus, cupiditate id repudiandae rerum odit? Rem voluptates, autem aliquid iste tempora quas veritatis atque sit. Accusantium enim quidem inventore cumque labore!</span><span>Laborum odit neque iusto labore voluptate possimus alias ullam, ipsum dolores quaerat corrupti at magni ducimus molestiae facilis ex, velit aliquid reiciendis? Cupiditate odit voluptas quidem placeat mollitia. Illum, sint.</span><span>Facilis quod suscipit praesentium quisquam, cupiditate, quae rerum placeat possimus tempore temporibus sequi est eveniet doloribus at voluptate accusantium pariatur aut modi? Doloremque earum, consequuntur in nisi quia odit excepturi?</span><span>Facere consequatur, quidem voluptate quasi rerum amet esse, at deserunt iste nostrum officia. Esse maxime nulla error aliquid dicta rem quidem a eligendi voluptates, sit animi vero ab natus ullam.</span><span>Porro velit corporis nisi magnam quaerat rem reiciendis numquam quis id dolorum quos atque sunt veniam non cum doloribus eum possimus voluptatem officiis obcaecati, error pariatur? Rerum placeat necessitatibus magnam!</span><span>Quia voluptate excepturi cupiditate quibusdam at, voluptatem maxime? Modi fugiat consequuntur repellendus dolor? Provident ratione amet consequuntur. Nemo ratione repudiandae inventore? Natus a illum facilis odio voluptatum consequatur voluptatibus in.</span><span>Iure, iste praesentium eligendi, molestiae sit accusantium eius soluta voluptates natus illo sint. Maxime, alias ea error quasi placeat, ducimus expedita repellendus, recusandae temporibus molestiae repudiandae eveniet fuga! Minima, eius.</span><span>Laudantium deserunt nobis beatae unde eum libero pariatur labore quisquam nihil id delectus assumenda qui commodi iusto voluptatem saepe, culpa eligendi optio consequatur, repellendus minima cupiditate fugit? At, sed temporibus.</span><span>Facilis repudiandae quasi maiores corrupti, fuga vel dolores iure molestias quo impedit nisi libero voluptatibus voluptatem dicta reprehenderit tempora dolorum obcaecati. Accusamus impedit amet, optio molestias itaque quos dolores repellendus.</span></p>
+    </div>
+
+    
+
+
+</body>
+</html>

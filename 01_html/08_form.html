@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+</head>
+<body>
+    <h1>form관련</h1>
+    <!--
+        action : 폼이 제출될 server측 주소, 미작성시 현재 주소로 제출됨.
+        method : GET(기본값) | POST
+           1. GET http://127.0.0.1:5500/08_form.html?userEmail=soso%40gmail.com
+           url에 덧붙여 전송
+           2. POST http메세지 body영역에 작성, url에 노출되지 않는다.
+
+           *input태그의 name 속성이 제출되는 key값이다.
+           *Name속성이 없으면 제출되지 않는다. 
+    -->
+    <form
+    action=""
+    method="GET">
+    <label for = "userEmail"> 이메일</label>
+    <input type="text" name="userEmail" id="userEmail">
+    <br>
+    <label for = "userEmail"> 이름</label>
+    <input type="text" name="userName" id="userEmail">
+    <br>
+    <input type="submit" value="제출">
+
+    </form>
+
+    <h2>text관련</h2>
+    <form action="">
+        <!--form하위에서 grouping 목적-->
+        <fieldset> 
+            <legend>회원정보</legend>
+            <!--한줄짜리 사용자입력을 처리-->
+            <input 
+            type="text" 
+            name="memberName" 
+            id="memberName" 
+            placeholder="회원명"
+            value="홍길동"
+            readonly  
+            required> <!--필수,빈칸으로 제출하면 제출이 안된다.-->
+            <br>
+            <input 
+              type="password" 
+              name="memberPwd" 
+              id="memberPwd"
+              maxlength="8">
+            </fieldset>
+        
+        <fieldset>
+            <legend>기타정보</legend>
+            <input type="search" name="searchKeyword" id="searchKeyword" placeholder="검색어를 입력하세요.">
+            <br><br>
+            <!--이메일형식검사 @포함여부 -->
+            <input type="email" name="memberEmail" id="memberEmail">
+            <br><br>
+            <!--url형식 검사-->
+            <input type="url" name="memberHomepage" id="memberHomepage">
+            <br><br>
+            <!--핸드폰에서 숫자키보드를 제공-->
+            <input type="tel" name="memberTel" id="memberTel"  value="010-1234-1234">
+            </fieldset>
+            
+            
+            <fieldset>
+            <legend>자기소개</legend>
+            <!-- textarea 여러줄 텍스트 입력 -->
+            <!-- style="resize: none; 사이즈 조정 제한 -->
+            <textarea 
+                name="selfIntroduce" 
+                id="selfIntroduce" 
+                cols="30" 
+                rows="10"  
+                style="resize: none;">
+                안녕
+                잘가
+                반가웠어
+            </textarea>
+            <br>
+           
+           
+
+        </fieldset>
+        
+        <br><br>
+        <!--1. input태그 button생성-->
+            <!--
+            <input type="submit" value="제출">
+            <input type="reset" value="초기화">
+            <input type="button" value="그냥 버튼">
+            -->
+
+        <!--2. button태그 type속성을 반드시 작성할 것. type="submit"기본값--> 
+            <button type="submit">제출</button>
+            <button type="reset">초기화</button>
+            <button type="button">그냥 버튼</button>
+
+    </form>
+
+    <h2>숫자관련</h2>
+    <form action="">
+        <fieldset>
+            <legend>숫자</legend>
+             <!-- input : number 숫자 관련, 스핀 박스 지원 -->
+            <input 
+              type="number" 
+              name="point" 
+              id="point"
+              max="100"
+              min="0"
+              step="5"
+              style="width: 100px;">
+              <br>
+              <!-- input : range 숫자 조정 가능한 조절 바 지원, 
+                그러나 입력창 값 자동변경을 지원하지 않아 차후 자바스크립트로 응용 필요 -->
+              <!--input:range[max=100][min]-->
+              <input 
+              type="range" 
+              name="userAmount" 
+              id="userAmount" 
+              max="100" 
+              min="1">
+
+        </fieldset>
+        <button type="submit">제출</button>
+
+
+    </form>
+    
+</body>
+</html>
