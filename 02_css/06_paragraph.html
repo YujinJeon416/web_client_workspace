@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS-Paragraph</title>
+</head>
+<body>
+    <h1>문단</h1>
+    <div class="wrapper">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex ab adipisci vel rerum esse! Ducimus quasi laborum iste natus? Aperiam perferendis minus, aliquid asperiores quis iste non iusto perspiciatis voluptates!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et debitis adipisci error iure nesciunt minima voluptas, magni dicta dolorum, rem ipsum, soluta distinctio maxime odio mollitia placeat earum culpa vel!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, corporis velit! Totam facilis incidunt temporibus dignissimos fugit ut, cupiditate voluptas dolore aspernatur voluptatem tempore perferendis modi, aliquid sunt error perspiciatis?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis vero iure iste, voluptas cum sapiente quaerat soluta est eos dolore similique nam minima recusandae, debitis, quibusdam nobis ut voluptatibus aperiam?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea quidem beatae soluta eveniet dolorum, esse ipsa fugiat, magnam error obcaecati sit modi repellendus commodi velit totam rerum illum? Reprehenderit, sequi!</p>
+    </div>
+    <style>
+        .wrapper p::first-letter{
+            font-size: 2em;
+
+        }
+        /* .wrapper p::first-line{
+            text-decoration: underline;
+        } */
+
+        /* .wrapper p::before{
+            content: "😍";
+        }
+        .wrapper p::after {
+            content: "👍";
+        } */
+
+        /*카운터*/
+        /*부모요소에서 선언*/
+        .wrapper{
+            counter-reset: num;
+        }
+        .wrapper p::before{
+            counter-increment: num;
+            content: counter(num)" ";
+        }
+
+        ::selection{
+            background-color: lemonchiffon;
+            color: maroon;
+        }
+    </style>
+</body>
+</html>
