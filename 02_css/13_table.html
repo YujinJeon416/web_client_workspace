@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS-TABLE</title>
+</head>
+<body>
+    <h1>TABLE</h1>
+
+    <table id="tbl-browser">
+        <thead>
+
+        </thead>
+        <tbody>
+
+            <tr>
+                <th>브라우저명</th>
+                <th>제조사</th>
+                <th>홈페이지</th>
+            </tr>
+            <tr>
+                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur provident nam distinctio molestiae nisi facilis! Incidunt ullam officia, velit, saepe necessitatibus reprehenderit at nihil mollitia fuga iure quam, quaerat dolorem!</td>
+                <td>구글</td>
+                <td><a href="http://google.com"> http://google.com </a></td>
+            </tr>
+            <tr>
+                <td>사파리</td>
+                <td>애플</td>
+                <td><a href="https://apple.com">https://apple.com</a></td>
+            </tr>
+            <tr>
+                <td>파이어폭스</td>
+                <td>모질라</td>
+                <td><a href="http://mozilla.org">http://mozilla.org</a></td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>총개수</td>
+                <td colspan="2">3</td>
+            </tr>
+
+        </tfoot>
+    </table>
+
+    <style>
+        /* border는 공간이라 경계선 안쪽이 비어보이는데, collapse로 이를 없앨 수 있다. */
+        table {
+            border: 1px solid gainsboro;
+            border-collapse: collapse;
+            width: 500px;
+            height: 500px;
+            margin: 0 auto;
+
+
+
+        }
+    
+        th, td {
+            padding: 10px 0;
+            border: 1px solid gainsboro;
+            /* 테이블은 text-align 사용 시 상하정렬까지 같이 해 줌 */
+            text-align: center;
+            /* vertical-align 수직 정렬 조정, 테이블에서만 적용된다! top|bottom|middle */
+            vertical-align: auto;
+            
+            
+
+        }
+        </style>
+    
+        <h2>일반요소의 vertical-align</h2>
+    
+        <!-- div.test>span{안녕} -->
+        <div class="test">
+            <span>안녕</span>
+        </div>
+        <style>
+        .test {
+            width: 100px;
+            height: 100px;
+            background-color: gainsboro;
+            margin: 0 auto;
+            text-align: center;
+            /* vertical-align: middle; 추가해도, 아무런 일이 일어나지 않는다.-테이블에만 적용되므로 */
+            display: table;
+            /*테이블속성을 주면 테이블처럼 작동한다.*/
+        }
+        .test span {
+            display: table-cell;
+            vertical-align: middle;
+        }
+        </style>
+</body>
+</html>

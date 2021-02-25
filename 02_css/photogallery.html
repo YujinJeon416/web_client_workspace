@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ko">
+ <head>
+  <meta charset="UTF-8">
+  <title>갤러리 만들기</title>
+  <style>
+    #gallery li img.pic {
+        display: none;
+        position: absolute;
+        z-index: 99999;
+        margin: -10px 100px;
+    }
+
+    #gallery img.small:hover + img.pic {
+        border: 1px solid black;
+        display: block;
+        width: 240px;
+        height: 180px;
+    }
+
+    #gallery ul {
+        text-align: center;
+        width: 400px;
+        background-color: grey;
+        padding: 30px 30px;
+        margin: 0 auto;
+    }
+    #gallery ul li {
+        display: inline-block;
+        list-style: none;
+        cursor: pointer;
+    }
+    </style>
+ </head>
+ <body>
+  <h2>사진 갤러리 만들기</h2>
+  <hr/>
+  <div id="gallery">
+	  <ul>
+		  <li> 
+			  <img src="이미지배포/image/flower1.PNG" class="small" width="120" height="90"> 
+			  <img src="이미지배포/image/flower1.PNG" class="pic"> 
+		  </li>
+		  <li>
+			  <img src="이미지배포/image/flower2.PNG" class="small" width="120" height="90"> 
+			  <img src="이미지배포/image/flower2.PNG" class="pic"> 
+		  </li>
+		  <li>
+			  <img src="이미지배포/image/flower3.PNG" class="small" width="120" height="90"> 
+			  <img src="이미지배포/image/flower3.PNG" class="pic"> 
+		  </li>
+		  <li>
+			  <img src="이미지배포/image/flower4.PNG" class="small" width="120" height="90"> 
+			  <img src="이미지배포/image/flower4.PNG" class="pic"> 
+		  </li>
+		  <li>
+			  <img src="이미지배포/image/flower5.PNG" class="small" width="120" height="90">
+			  <img src="이미지배포/image/flower5.PNG" class="pic"> 
+		  </li>
+		  <li>
+			  <img src="이미지배포/image/forest1.PNG" class="small" width="120" height="90">
+			  <img src="이미지배포/image/forest1.PNG" class="pic"> 
+		  </li>
+	  </ul>
+  </div>
+ </body>
+</html>
