@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAYOUT</title>
+    <style>
+        div{
+            padding: 10px;
+        }
+        #container{
+            background-color: #f0f0f0;
+            width: 960px;
+            margin: 0 auto;
+        }
+        #header{
+            background-color:darkgreen;
+            height: 100px;
+        }
+        #content{
+            background-color: gold;
+            width: 640px;
+            height: 400px;
+            float: left;
+        }
+        #sideinfo{
+            background-color:maroon;
+            width: 280px;
+            height: 400px;
+            float: right; /*left로 해도 오른쪽에 가서 붙는다*/
+        }
+        #footer{
+            clear: both;/*float이 끝났다는 선언을 해준다. 오른쪽 왼쪽에 다 영역이 있다면 both */
+            background-color: saddlebrown;
+            height: 100px;
+
+        }
+
+    </style>
+</head>
+<body>
+    <!--html5 이전의 페이지 레이아웃-->
+    <div id="container">
+        <div id="header">Header</div>
+        <div id="content">Content</div>
+        <div id="sideinfo">Side Info</div>
+        <div id="footer">Footer</div>
+    </div>
+    
+</body>
+</html>
