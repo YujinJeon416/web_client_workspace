@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js - hoisting</title>
+</head>
+<body>
+    <h1>Hoisting</h1>
+    <!-- var키워드를 통해 선언된 변수는 각 script태그별로 끌어올려진다. -->
+
+    <script>
+        // 이렇게 변수만 hoisting처리가 되어서 끌어올라온다.
+        // var a;//var 키워드로 선언된 변수는 hoisting된다.
+        //var bar; // var 키워드로 선언된 변수는 hoisting된다.
+        console.log(a);//undefined
+        var a = "안녕"; //Uncaught ReferenceError: a is not defined
+       
+        //function foo : 함수 선언식 hoisting된다.
+        foo();
+
+
+       
+    
+        /**
+         * 함수 선언식은 hoisting된다.
+         * 함수표현식으로 작성했다면 미리 호출해도 잘 작동한다.
+         */ 
+        function foo(){
+            console.log("foo");
+
+        }
+
+        bar(); //Uncaught TypeError: bar is not a function
+        /**
+         * 함수 표현식
+         * bar 변수에 익명함수를 대입
+         */ 
+        var bar = function(){
+            console.log("bar");
+        }
+       
+
+        // 3. Hoisting 예제
+        var me = 'surim';
+
+        function foo () {
+        alert(me);
+    
+        var me = 'someone else';
+        }
+
+        foo();    // undefined
+        // 본인이 속한 scope내에서 끝까지 올려진다.
+
+        var me = 'surim';
+
+        function foo () {
+           var me;
+    
+            alert(me);
+    
+             me = 'someone else';
+        }
+
+                foo();
+// 위의 예제의 실행 과정이다. 함수 내의 me가 Hoisting이 되었지만 아직 할당하기 전에 alert를 함으로 결과는 undefined가 나오게 된다.
+
+    </script>
+</body>
+</html>
