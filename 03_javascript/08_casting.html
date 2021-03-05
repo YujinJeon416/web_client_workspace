@@ -62,6 +62,87 @@
 
         };
     </script>
+    <h2>NaN | Infinity</h2>
+
+    <input type="button" value="실행" onclick="test4();">
+    <script>
+        var test4 = function(){
+            console.log(10 / 0); //Infinity
+            console.log(typeof(10 / 0)); //number
+
+
+            console.log(10 / "a"); //NaN ->NaN과의 연산은 무조건 NaN이 나온다.
+            console.log(typeof(10 / "a")); //number
+
+             //isNaN() : NaN여부확인 NaN이면 true, NaN이 아니면 false;
+            var num = prompt("숫자를 입력하세요.");
+
+            console.log(typeof(num)); //string "123"
+
+             //여기서 isNaN이 string을 숫자로 임의변환 후 확인됨
+            if(isNaN(num))
+            alert("숫자가 아닙니다."); //NaN이 아니면 false
+            else
+            alert("숫자입니다."); // NaN이면 true
+
+        };
+    </script>
+
+    <h2>논리형으로의 형변환</h2>
+    <input type="button" value="실행" onclick="test5();">
+    <script>
+
+        /**
+         * 변수, 리터럴(값)이 boolean형으로 형변환 가능
+         * 
+         * 값이 존재하는 것은 true치환 : 123, -100, 3.14, "안녕", 'ㅋㅋㅋ', new Date()
+         * 값이 존재하지 않는것은 false 치환 : 0, 0.0, "", '', undefined, null, NaN
+         */ 
+
+         var test5 = function(){
+            console.log(Boolean(123));
+            console.log(Boolean(-100));
+            console.log(Boolean(3.14));
+            console.log(Boolean("abc"));
+            console.log(Boolean('ㅋㅋㅋ'));
+            console.log(Boolean(new Date()));
+
+            console.log(Boolean(0));
+            console.log(Boolean(0.0));
+            console.log(Boolean(""));
+            console.log(Boolean(undefined));
+            console.log(Boolean(null));
+            console.log(Boolean(NaN));
+
+
+            var name = prompt("이름을 입력하세요.");
+            //1. "홍길동" 확인 -> "홍길동" ->true
+            //2. "" 확인 -> "" ->false
+            //3. 취소-> null -> false
+
+            if(name){
+                //alert("반갑습니다, [" + name + "]님~");
+
+                var result1 = document.querySelector("#result1");
+                if(result1){
+                    console.log("#result1가 존재!");
+                    result1.innerHTML = "반갑습니다, [" + name + "]님~";
+                }
+                else{
+                    console.log("#result1가 존재하지 않음!");
+                    document.querySelector("body").innerHTML 
+                       +="<h1>반갑습니다, [" + name + "]님~</h1>";
+                }
+            }
+            else{
+                alert("올바른 이름을 입력하세요.");
+            }
+
+          };
+
+         
+    </script>
+    <h1 id="result1"></h1>
 
     
 </body>
