@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js - object array</title>
+</head>
+<body>
+    <h1>Object Array</h1>
+    <h2>객체 배열</h2>
+    <input type="button" value="실행" onclick="test1();">
+    <script>
+        function test1(){
+            var pets = [
+                {
+                   name : '코코',
+                   breed : '코숏',
+                   weight : 5.5
+
+                },
+                {
+                   name : '보리',
+                   breed : '치즈',
+                   weight : 4.5
+
+                },
+                {
+                   name : '감자',
+                   breed : '말티즈',
+                   weight : 2.5
+
+                },
+            ];
+
+
+            console.log(pets);
+
+           
+
+            for(var i in pets){ //반복문으로 안하면 일일히 하나씩 추가해야함
+            //   console.log(pets[i]['name']); //이름만 출력하기
+            pets[i].bark = function(){
+                return this.weight  > 10 ? '냐옹' : '니야옹';
+                
+            };
+            console.log(pets[i].name + "이/가" + pets[i].bark() + "운다.");
+        }
+            
+    }
+    </script>
+
+    <h2>생성자 함수</h2>
+    <input type="button" value="실행" onclick="test2();">
+    <script>
+        /**
+         * (this용법4)생성자 함수 안의 this는 현재 객체를 가리킨다.
+         * - 생성자함수의 첫글자는 대문자로 작성하는것이 관례.
+         * - new연산자와 함께 호출
+         */ 
+        function Pet(name, breed, weight){ //대문자로 중요!
+            this.name = name;
+            this.breed = breed;
+            this.weight = weight;
+            // this.bark = function(){
+            //     return this.weight  > 10 ? '냐옹' : '니야옹';
+            // };
+
+        }
+        //Pet의 prototype객체에 중복된 속성/메소드를 작성한다.
+        Pet.prototype.bark = function(){
+            return this.weight > 10 ? '냐옹' : '니야옹';
+        }
+        function test2(){
+            var pets = [
+                new Pet('코코', '코숏' , 5.5),
+                new Pet('보리', '치즈', 4.5),
+                new Pet('감자', '말티즈',2.5)
+
+        ];
+            console.log(pets);
+            for(var i in pets){ 
+                console.log(pets[i].name + "이/가" + pets[i].bark() + "운다.");
+        }
+
+
+        }
+    </script>
+    
+</body>
+</html>
