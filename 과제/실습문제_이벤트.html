@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js - 실습문제_이벤트</title>
+</head>
+<body>
+    <h1>실습문제_이벤트</h1>
+    <!--
+        #btn-generate를 클릭하면 , 아래데이터를 javascript객체로 먼저 만들고, 배열로 관리한다.
+        배열을 순회하면서, button태그를 동적으로 생성한다.
+        생성된 버튼태그를 클릭하면, 각각의 url로 페이지 이동해야한다.
+        
+        버튼 value            이동할 url
+        ----------------------------------
+        네이버              https://www.naver.com
+        구글                https://www.google.com
+        KH                  https://iei.or.kr
+        와삼                https://www.w3schools.com
+    -->
+    <button type="button" id="btn-generate" >버튼생성</button>
+    <div class="btn-wrapper"></div>    
+    <script>
+        var test1 = document.getElementById('btn-generate');
+
+           test1.onclick = function(e){
+           
+            var arr = [
+            new Link("네이버", "https://www.naver.com"),
+            new Link("구글", " https://www.google.com"),
+            new Link("KH", " https://iei.or.kr"),
+            new Link("와삼", " https://www.w3schools.com")
+
+            ];
+    
+            var container = document.querySelector(".btn-wrapper");
+            for(var i in arr){
+            var link = arr[i];
+            container.innerHTML += "<input type='button' value='" + link.name 
+                                + "' url='" + link.url 
+                                + "' onclick='goToUrl(event);'/>"
+            }
+    
+            e.target.onclick = null;
+        }
+    
+        function Link(name, url){
+        this.name = name;
+        this.url = url;
+        }
+    
+       
+        function goToUrl(e){
+            var btn = e.target;
+            console.dir(btn);
+    
+            var url = btn.getAttribute("url");
+            console.log(url);
+    
+        
+            location.href = url;
+        }
+        </script>
+</body>
+</html>
