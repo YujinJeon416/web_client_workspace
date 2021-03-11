@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습문제_주민번호</title>
+</head>
+<body>
+    <h1>실습문제-주민번호</h1>
+    <!-- @실습문제 : 주민번호 정규표현식
+      다음과 같은 input태그에서 주민번호를 체크하는 정규표현식을 작성해서, 
+      유효한지 아닌지 alert를 통해 처리할세요. -->
+
+      <p>1. 다음과 같은 input태그에서 주민번호의 자릿수를 체크하는 정규표현식을 작성하라.</p>
+    <label>주민번호 입력 : </label>
+    <input type="text" id="ssn">
+    <button type='button' onclick="testSSN();">실행확인</button>
+    <script>
+        function testSSN(){
+            var regExp = /\d\d\d\d\d\d-[1234]\d\d\d\d\d\d/;
+            var ssn1 = document.getElementById('ssn').value;
+            
+            if(regExp.test(ssn1)){
+                alert('정상 입력');
+            }else{
+                alert("잘못 입력");
+            }
+        }
+    </script>
+    
+</body>
+</html>
